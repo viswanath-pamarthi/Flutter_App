@@ -12,10 +12,9 @@ void main() {
           title: Text('My Flutter App'),
           backgroundColor: Colors.blueGrey[900],
         ),
-        body: Center(
+        body: const Center(
           child: Image(
-            image: NetworkImage(
-                'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+            image: AssetImage('images/diamond.png'),
           ),
         ),
       ),
