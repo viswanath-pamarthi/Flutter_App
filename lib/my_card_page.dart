@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/magic_8_ball_page.dart';
+import 'package:flutter_app/quizzler_page.dart';
+import 'package:flutter_app/story_page.dart';
 import 'package:flutter_app/xylophone_page.dart';
 
 import 'dice_page.dart';
@@ -114,7 +116,24 @@ class MyCardPage extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Xylophone'))
+                child: const Text('Xylophone')),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const QuizzlerPage()));
+              },
+              child: const Text('Quizzler'),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const StoryPage()));
+                },
+                child: const Text('Story'))
           ],
           mainAxisAlignment: MainAxisAlignment.center,
         ),
