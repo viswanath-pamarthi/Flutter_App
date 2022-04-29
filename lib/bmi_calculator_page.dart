@@ -42,15 +42,13 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
-                    child: ReusableCard(
-                      colour: selectedGender == Gender.male
-                          ? activeCardColor
-                          : inactiveCardColor,
-                      cardChild: const IconContent(
-                          iconData: FontAwesomeIcons.mars, iconText: 'MALE'),
-                    ),
-                    onTap: () {
+                  child: ReusableCard(
+                    colour: selectedGender == Gender.male
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    cardChild: const IconContent(
+                        iconData: FontAwesomeIcons.mars, iconText: 'MALE'),
+                    tapFunction: () {
                       setState(() {
                         selectedGender = Gender.male;
                       });
@@ -58,15 +56,13 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    child: ReusableCard(
-                      colour: selectedGender == Gender.female
-                          ? activeCardColor
-                          : inactiveCardColor,
-                      cardChild: const IconContent(
-                          iconData: FontAwesomeIcons.venus, iconText: 'FEMALE'),
-                    ),
-                    onTap: () {
+                  child: ReusableCard(
+                    colour: selectedGender == Gender.female
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    cardChild: const IconContent(
+                        iconData: FontAwesomeIcons.venus, iconText: 'FEMALE'),
+                    tapFunction: () {
                       setState(() {
                         selectedGender = Gender.female;
                       });
