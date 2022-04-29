@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/bmi_calculator_page.dart';
 import 'package:flutter_app/magic_8_ball_page.dart';
 import 'package:flutter_app/quizzler_page.dart';
 import 'package:flutter_app/story_page.dart';
@@ -133,7 +134,16 @@ class MyCardPage extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => const StoryPage()));
                 },
-                child: const Text('Story'))
+                child: const Text('Story')),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BmiCalculatorPage()));
+              },
+              child: Text('BMI Calculator'),
+            )
           ],
           mainAxisAlignment: MainAxisAlignment.center,
         ),

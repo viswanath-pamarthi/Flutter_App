@@ -14,7 +14,20 @@ class MyApp extends StatelessWidget {
   //build is called when ever MyApp widget new version is created, i.e. any change in the build method code, it is reload with hot reload
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+        //App wide theme
+        theme: ThemeData.dark().copyWith(
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            // secondary: Colors.purple,
+            //#0A0D22 - 0xFF0A0D22 - use 0xFF for # in Flutter
+            primary: Color(0xFF0A0D22),
+          ),
+          scaffoldBackgroundColor: Color(0xFF0A0D22),
+          // textTheme: const TextTheme(
+          //   bodyText2: TextStyle(color: Colors.white),
+          // ),
+        ),
+
         //Material App widget
         //Material design is a design style or concept created by Google adopted by many companies for Mobile Apps and websites http://material.io
         home:
