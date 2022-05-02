@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/constants.dart';
 import 'custom_widgets/icon_content.dart';
 import 'custom_widgets/reusable_card.dart';
+import 'custom_widgets/round_icon_button.dart';
 
 class BmiCalculatorPage extends StatelessWidget {
   const BmiCalculatorPage({Key? key}) : super(key: key);
@@ -25,6 +26,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender = Gender.male;
   int height = 180;
+  int weight = 60;
+  int age = 19;
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +81,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
+                        const Text(
                           'Height',
                           style: kLabelTextStyle,
                         ),
@@ -101,13 +104,13 @@ class _InputPageState extends State<InputPage> {
                           //.of returns data property/ data of the closest SliderTheme in the given context
                           data: SliderTheme.of(context).copyWith(
                               activeTrackColor: Colors.white,
-                              inactiveTrackColor: Color(0xFF8D8E98),
-                              thumbColor: Color(0xFFEB1555),
-                              overlayColor: Color(0x29EB1555),
-                              thumbShape: RoundSliderThumbShape(
+                              inactiveTrackColor: const Color(0xFF8D8E98),
+                              thumbColor: const Color(0xFFEB1555),
+                              overlayColor: const Color(0x29EB1555),
+                              thumbShape: const RoundSliderThumbShape(
                                   enabledThumbRadius: 15.0),
-                              overlayShape:
-                                  RoundSliderOverlayShape(overlayRadius: 30.0)),
+                              overlayShape: const RoundSliderOverlayShape(
+                                  overlayRadius: 30.0)),
                           child: Slider(
                             value: height.toDouble(),
                             min: 20.0,
@@ -135,11 +138,87 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     colour: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Text(
+                          'Weight',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              tapFunction: () {
+                                setState(() {
+                                  if (weight > 0) {
+                                    weight--;
+                                  }
+                                });
+                              },
+                            ),
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              tapFunction: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
                     colour: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Text(
+                          'AGE',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                tapFunction: () {
+                                  setState(() {
+                                    if (age > 0) {
+                                      age--;
+                                    }
+                                  });
+                                }),
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                                tapFunction: () {
+                                  setState(() {
+                                    age++;
+                                  });
+                                })
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                   // flex: 5,
                 ),
