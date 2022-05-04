@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/question.dart';
+import 'package:flutter_app/screens/question.dart';
 
 class QuizBrain {
   //adding '_' before variable names makes it private in Dart

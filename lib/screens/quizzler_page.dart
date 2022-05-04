@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/quiz_brain.dart';
+import 'package:flutter_app/screens/quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
 class QuizzlerPage extends StatelessWidget {
+  static const routeName = '/quizzler';
+
   const QuizzlerPage({Key? key}) : super(key: key);
 
   @override

@@ -1,13 +1,19 @@
 import 'package:flutter_app/Enums/Gender.dart';
+import 'package:flutter_app/calculator_brain.dart';
+import 'package:flutter_app/screens/bmi_results_screen_arguments.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app/constants.dart';
-import 'custom_widgets/icon_content.dart';
-import 'custom_widgets/reusable_card.dart';
-import 'custom_widgets/round_icon_button.dart';
+import 'package:flutter_app/components/constants.dart';
+import '../components/reusable_card.dart';
+import '../components/bottom_button.dart';
+import '../components/icon_content.dart';
+import '../components/reusable_card.dart';
+import '../components/round_icon_button.dart';
 
 class BmiCalculatorPage extends StatelessWidget {
+  static const routeName = '/bmi';
+
   const BmiCalculatorPage({Key? key}) : super(key: key);
 
   @override
@@ -225,11 +231,22 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: kBottomContainerColor,
-            margin: const EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: kBottomContainerHeight,
+          BottomButton(
+            onTap: () {
+              CalculatorBrain calc =
+                  CalculatorBrain(height: height, weight: weight);
+
+              Navigator.pushNamed(
+                context,
+                '/bmiResults',
+                arguments: BmiResultsScreenArguments(
+                  bmiResult: calc.calculateBMI(),
+                  weightResultText: calc.getWeightResults(),
+                  interpretation: calc.getInterpretation(),
+                ),
+              );
+            },
+            buttonTitle: 'CALCULATE',
           )
         ],
       ),

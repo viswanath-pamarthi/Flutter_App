@@ -2,6 +2,8 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class XyloPhonePage extends StatelessWidget {
+  static const routeName = '/xylophone';
+
   const XyloPhonePage({Key? key}) : super(key: key);
 
   void playSound(int noteNumber) {

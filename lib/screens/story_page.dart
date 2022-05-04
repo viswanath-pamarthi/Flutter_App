@@ -1,11 +1,13 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/story_brain.dart';
+import 'package:flutter_app/screens/story_brain.dart';
 
 StoryBrain storyBrain = StoryBrain();
 
 class StoryPage extends StatelessWidget {
+  static const routeName = 'story';
+
   const StoryPage({Key? key}) : super(key: key);
 
   @override

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bmi_calculator_page.dart';
-import 'package:flutter_app/magic_8_ball_page.dart';
-import 'package:flutter_app/quizzler_page.dart';
-import 'package:flutter_app/story_page.dart';
-import 'package:flutter_app/xylophone_page.dart';
+import 'package:flutter_app/screens/bmi_calculator_page.dart';
+import 'package:flutter_app/screens/magic_8_ball_page.dart';
+import 'package:flutter_app/screens/quizzler_page.dart';
+import 'package:flutter_app/screens/story_page.dart';
+import 'package:flutter_app/screens/xylophone_page.dart';
 
-import 'dice_page.dart';
+import 'package:flutter_app/screens/dice_page.dart';
 
 class MyCardPage extends StatelessWidget {
+  static const routeName = '/';
+
   const MyCardPage({Key? key}) : super(key: key);
 
   @override
@@ -137,12 +139,15 @@ class MyCardPage extends StatelessWidget {
                 child: const Text('Story')),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const BmiCalculatorPage()));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => const BmiCalculatorPage()));
+
+                ///Using a named route
+                Navigator.pushNamed(context, '/bmi');
               },
-              child: Text('BMI Calculator'),
+              child: const Text('BMI Calculator'),
             )
           ],
           mainAxisAlignment: MainAxisAlignment.center,

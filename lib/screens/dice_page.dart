@@ -8,6 +8,8 @@ import 'dart:math';
 ///else nothing needs to change then we use a stateless widget
 /// shortcut to create - stful
 class DicePage extends StatefulWidget {
+  static const routeName = '/dicePage';
+
   const DicePage({Key? key}) : super(key: key);
 
   @override

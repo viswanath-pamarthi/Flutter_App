@@ -1,4 +1,4 @@
-import 'package:flutter_app/story_question.dart';
+import 'package:flutter_app/screens/story_question.dart';
 
 class StoryBrain {
   int _currentStory = 0;

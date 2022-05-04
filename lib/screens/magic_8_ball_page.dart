@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class Magic8BallPage extends StatelessWidget {
+  static const routeName = '/magic8Ball';
+
   const Magic8BallPage({Key? key}) : super(key: key);
 
   @override
