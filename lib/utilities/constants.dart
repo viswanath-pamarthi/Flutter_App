@@ -37,6 +37,6 @@ const kBMITextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
-const KBodyTextStyle = TextStyle(
+const kBodyTextStyle = TextStyle(
   fontSize: 22.0,
 );

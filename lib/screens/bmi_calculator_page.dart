@@ -4,7 +4,7 @@ import 'package:flutter_app/screens/bmi_results_screen_arguments.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app/components/constants.dart';
+import 'package:flutter_app/utilities/constants.dart';
 import '../components/reusable_card.dart';
 import '../components/bottom_button.dart';
 import '../components/icon_content.dart';

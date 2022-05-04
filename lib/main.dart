@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/bmi_calculator_page.dart';
-import 'package:flutter_app/screens/bmi_calculator_results_page.dart';
+import 'package:flutter_app/screens/bmi_calculator_results_screen.dart';
 import 'package:flutter_app/screens/dice_page.dart';
 import 'package:flutter_app/screens/magic_8_ball_page.dart';
 import 'package:flutter_app/screens/my_card_page.dart';
@@ -47,8 +47,8 @@ class MyApp extends StatelessWidget {
         QuizzlerPage.routeName: (context) => const QuizzlerPage(),
         StoryPage.routeName: (context) => const StoryPage(),
         BmiCalculatorPage.routeName: (context) => const BmiCalculatorPage(),
-        BmiCalculatorResultsPage.routeName: (context) =>
-            BmiCalculatorResultsPage(),
+        BmiCalculatorResultsScreen.routeName: (context) =>
+            BmiCalculatorResultsScreen(),
       },
     ); //Add a "," at after each closing ) of every widget so that the file is automatically formatted with dart format
   }

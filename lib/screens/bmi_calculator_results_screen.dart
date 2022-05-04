@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/components/bottom_button.dart';
 import 'package:flutter_app/components/reusable_card.dart';
 import 'package:flutter_app/screens/bmi_results_screen_arguments.dart';
-import '../components/constants.dart';
+import '../utilities/constants.dart';
 import 'package:flutter_app/calculator_brain.dart';
 
-class BmiCalculatorResultsPage extends StatelessWidget {
+class BmiCalculatorResultsScreen extends StatelessWidget {
   static const routeName = '/bmiResults';
   late final String bmiResult;
   late final String resultText;
@@ -59,7 +59,7 @@ class BmiCalculatorResultsPage extends StatelessWidget {
                     Text(
                       _bmiResultsScreenArguments.interpretation,
                       textAlign: TextAlign.center,
-                      style: KBodyTextStyle,
+                      style: kBodyTextStyle,
                     ),
                   ],
                 ),
