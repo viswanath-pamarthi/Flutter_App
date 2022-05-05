@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/bmi_calculator_page.dart';
+import 'package:flutter_app/screens/loading_screen.dart';
 import 'package:flutter_app/screens/magic_8_ball_page.dart';
 import 'package:flutter_app/screens/quizzler_page.dart';
 import 'package:flutter_app/screens/story_page.dart';
@@ -148,6 +149,12 @@ class MyCardPage extends StatelessWidget {
                 Navigator.pushNamed(context, '/bmi');
               },
               child: const Text('BMI Calculator'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, LoadingScreen.routeName);
+              },
+              child: const Text('Weather'),
             )
           ],
           mainAxisAlignment: MainAxisAlignment.center,
